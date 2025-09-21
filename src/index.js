@@ -1,4 +1,3 @@
-// src/index.js
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
@@ -6,10 +5,9 @@ const cors = require("cors");
 // Instancia de Sequelize
 const sequelize = require("./config/db");
 
-// Modelos que deben existir para sync
+// 4) Modelos que deben existir para sync
 require("./models/Conversion"); 
-// Si luego usas usuarios, agrega:
-// require("./models/Usuario");
+require("./models/Usuario");   // 5) nuevo modelo Usuario
 
 const routes = require("./routes"); // usa routes/index.js
 

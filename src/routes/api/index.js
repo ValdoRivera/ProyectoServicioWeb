@@ -1,22 +1,17 @@
 // src/routes/api/index.js
 const { Router } = require("express");
-
-// Subrutas
-const exchangeRoutes = require("./exchange");
-const usuarioRoutes = require("./usuario");
-// Si usas auth, descomenta la siguiente línea y el router.use de abajo
-// const authRoutes = require("./auth");
-
 const router = Router();
 
-// Ruta raíz (ping)
-router.get("/", (req, res) => {
-  res.send("Tarea 1 Primer servicio web");
-});
+// públicas opcionales (healthcheck)
+router.get("/", (_req, res) => res.json({ ok: true, api: "divisas-cripto" }));
 
-// Montar módulos
-router.use("/exchange", exchangeRoutes); // /api/exchange/...
-router.use("/usuario", usuarioRoutes);   // /api/usuario/...
-// router.use("/auth", authRoutes);      // /api/auth/...
+// RUTAS DE RATES (NUEVAS)
+const ratesRoutes = require("./rates");
+router.use("/rates", ratesRoutes);
+
+// Si usas usuarios, auth, etc., los agregas aquí:
+// const usuariosRoutes = require("./usuarios");
+// router.use("/usuarios", usuariosRoutes);
 
 module.exports = router;
+

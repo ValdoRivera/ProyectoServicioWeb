@@ -1,6 +1,5 @@
 // src/controllers/ratesController.js
-const { getRates, convert } = require("../services/ratesService");
-const Conversion = require("../models/Conversion");
+const { getRates, convertAndRecord } = require("../services/ratesService");
 
 exports.getRates = async (req, res, next) => {
   try {
@@ -12,20 +11,12 @@ exports.getRates = async (req, res, next) => {
 
 exports.convert = async (req, res, next) => {
   try {
-    const { amount, from, to } = req.query;
+    const { amount, from, to } = req.query; // si usas POST, cambia a req.body
     const amt = Number(amount);
     if (!from || !to || !amount || isNaN(amt)) {
       return res.status(400).json({ message: "Parámetros requeridos: amount, from, to" });
     }
-    const data = await convert(amt, from, to);
-    await Conversion.create({
-      fromSymbol: data.from,
-      toSymbol: data.to,
-      amount: data.amount,
-      result: data.result,
-      base: data.base,
-      meta: data.usedRates,
-    });
+    const data = await convertAndRecord(amt, from, to);
     res.json(data);
   } catch (err) { next(err); }
 };

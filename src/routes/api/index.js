@@ -1,4 +1,3 @@
-// src/routes/api/index.js
 const { Router } = require("express");
 const router = Router();
 
@@ -9,7 +8,11 @@ router.get("/", (_req, res) => res.json({ ok: true, api: "divisas-cripto" }));
 const ratesRoutes = require("./rates");
 router.use("/rates", ratesRoutes);
 
-// 4) Rutas de usuarios (nuevo punto)
+// 3) Rutas de autenticación
+const authRoutes = require("./auth.route");
+router.use("/auth", authRoutes);
+
+// 4) Rutas de usuarios
 const usersRoutes = require("./users");
 router.use("/users", usersRoutes);
 

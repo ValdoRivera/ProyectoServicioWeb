@@ -1,5 +1,6 @@
 // src/services/ratesService.js
 const axios = require("axios");
+const Conversion = require("../models/Conversion"); // <-- aquí persistimos
 
 const FIAT_API_BASE = process.env.FIAT_API_BASE || "https://api.exchangerate.host";
 const CRYPTO_API_BASE = process.env.CRYPTO_API_BASE || "https://api.coingecko.com/api/v3";
@@ -10,7 +11,6 @@ const CACHE_TTL = Number(process.env.RATES_CACHE_TTL || 60);
 let cache = { ts: 0, base: null, rates: null };
 const fresh = (ts) => Date.now() - ts < CACHE_TTL * 1000;
 
-// ----------------- FIAT PROVIDERS -----------------
 async function getFiatRates(base) {
   // 1) exchangerate.host
   try {
@@ -19,31 +19,28 @@ async function getFiatRates(base) {
     if (data && data.rates && Object.keys(data.rates).length) {
       return data.rates;
     }
-  } catch (_) {
-    // si falla, seguimos al fallback
-  }
+  } catch (_) {}
 
-  // 2) frankfurter.app
+  // 2) frankfurter.app (fallback)
   try {
     const url2 = `https://api.frankfurter.app/latest?from=${encodeURIComponent(base)}`;
     const { data } = await axios.get(url2, { timeout: 6000 });
     if (data && data.rates && Object.keys(data.rates).length) {
       return data.rates;
     }
-  } catch (_) {
-    // si falla, seguimos al mock/error
-  }
+  } catch (_) {}
 
-  // 3) si ambos fallan, lanza error (lo capturará getRates)
   throw new Error("Fiat provider sin datos");
 }
 
-// ----------------- CRYPTO PROVIDER -----------------
 async function getCryptoRatesInBase(base, symbols = ["BTC", "ETH"]) {
   const idMap = { BTC: "bitcoin", ETH: "ethereum" };
   const ids = symbols.map((s) => idMap[s]).filter(Boolean).join(",");
   const vs = base.toLowerCase();
-  const { data } = await axios.get(`${CRYPTO_API_BASE}/simple/price?ids=${ids}&vs_currencies=${vs}`, { timeout: 6000 });
+  const { data } = await axios.get(
+    `${CRYPTO_API_BASE}/simple/price?ids=${ids}&vs_currencies=${vs}`,
+    { timeout: 6000 }
+  );
   const out = {};
   if (data.bitcoin && data.bitcoin[vs] != null) out.BTC = 1 / data.bitcoin[vs];
   if (data.ethereum && data.ethereum[vs] != null) out.ETH = 1 / data.ethereum[vs];
@@ -72,14 +69,12 @@ async function getRates(base = DEFAULT_BASE) {
     return cache.rates;
   }
 
-  // Si el .env indica mock
   if (USE_MOCK) {
     const rates = mockRates(base);
     cache = { ts: Date.now(), base, rates };
     return rates;
   }
 
-  // Intentar proveedores reales
   try {
     const [fiatRates, cryptoRates] = await Promise.all([
       getFiatRates(base),
@@ -118,4 +113,32 @@ async function convert(amount, from, to) {
   return { amount, from, to, result, base, usedRates: { [from]: rateFrom, [to]: rateTo } };
 }
 
-module.exports = { getRates, convert };
+// -------- NUEVO: normalización + persistencia --------
+function normalizeSymbol(sym) {
+  return String(sym || "").trim().toUpperCase();
+}
+
+/**
+ * Convierte y registra la conversión en la base de datos.
+ * Devuelve el mismo payload que convert().
+ */
+async function convertAndRecord(amount, from, to) {
+  const amt = Number(amount);
+  const fromSym = normalizeSymbol(from);
+  const toSym = normalizeSymbol(to);
+
+  const data = await convert(amt, fromSym, toSym);
+
+  await Conversion.create({
+    fromSymbol: data.from,
+    toSymbol: data.to,
+    amount: data.amount,
+    result: data.result,
+    base: data.base,
+    meta: data.usedRates,
+  });
+
+  return data;
+}
+
+module.exports = { getRates, convert, convertAndRecord };

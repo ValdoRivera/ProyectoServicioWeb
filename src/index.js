@@ -1,45 +1,61 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+const helmet = require("helmet");
+const morgan = require("morgan");
+const { randomUUID } = require("crypto");
 
 // Instancia de Sequelize
 const sequelize = require("./config/db");
+require("./models/Conversion");
+require("./models/Usuario");
 
-// 4) Modelos que deben existir para sync
-require("./models/Conversion"); 
-require("./models/Usuario");   // 5) nuevo modelo Usuario
-
-const routes = require("./routes"); // usa routes/index.js
+const routes = require("./routes");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middlewares globales
+/* ----------------- Middlewares base ----------------- */
 app.use(cors());
+app.use(helmet());
 app.use(express.json());
 
-// Monta todas las rutas bajo /api
+/* --------- Request-ID (para correlación simple) ------- */
+app.use((req, res, next) => {
+  req.id = req.headers["x-request-id"] || randomUUID();
+  res.setHeader("x-request-id", req.id);
+  next();
+});
+
+/* ------------------- Morgan logs ---------------------- */
+morgan.token("rid", (req) => req.id);
+app.use(morgan(':date[iso] :method :url :status :response-time ms rid=:rid'));
+
+/* --------------------- Rutas -------------------------- */
 app.use("/api", routes);
 
-// Middleware 404
+/* ------------------ 404 Not Found --------------------- */
 app.use((req, res) => {
+  console.warn(`[WARN] 404 ${req.method} ${req.originalUrl} rid=${req.id}`);
   res.status(404).json({ message: "Ruta no encontrada" });
 });
 
-// Middleware de errores
-app.use((err, _req, res, _next) => {
-  console.error("❌ Error:", err);
+/* ----------------- Manejo de errores ------------------ */
+app.use((err, req, res, _next) => {
+  console.error(
+    `[ERROR] rid=${req.id} ${err.message}\n${err.stack || "(sin stack)"}`
+  );
   res.status(err.status || 500).json({ message: err.message || "Error interno" });
 });
 
-// Función autoejecutable para arrancar el servidor
+/* -------------------- Arranque ------------------------ */
 (async () => {
   try {
     await sequelize.authenticate();
     console.log("✅ DB conectada");
 
-    // { alter: true } actualiza la tabla en dev si cambias el modelo
-    await sequelize.sync({ alter: true });
+    // IMPORTANTE: sin alter para no seguir acumulando índices
+    await sequelize.sync();
     console.log("✅ DB lista y sincronizada");
 
     app.listen(PORT, () => {

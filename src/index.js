@@ -5,7 +5,7 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const { randomUUID } = require("crypto");
 
-// Instancia de Sequelize
+const logger = require("./config/logger"); // ⬅️ nuevo
 const sequelize = require("./config/db");
 require("./models/Conversion");
 require("./models/Usuario");
@@ -24,27 +24,34 @@ app.use(express.json());
 app.use((req, res, next) => {
   req.id = req.headers["x-request-id"] || randomUUID();
   res.setHeader("x-request-id", req.id);
+  // logger por request con el rid
+  req.log = logger.child({ rid: req.id });
   next();
 });
 
-/* ------------------- Morgan logs ---------------------- */
+/* ------------------- Morgan -> Winston ---------------------- */
 morgan.token("rid", (req) => req.id);
-app.use(morgan(':date[iso] :method :url :status :response-time ms rid=:rid'));
+app.use(
+  morgan(':date[iso] :method :url :status :response-time ms rid=:rid', {
+    stream: {
+      write: (message) => logger.info(message.trim()), // puedes usar logger.http si defines ese nivel
+    },
+  })
+);
 
 /* --------------------- Rutas -------------------------- */
 app.use("/api", routes);
 
 /* ------------------ 404 Not Found --------------------- */
 app.use((req, res) => {
-  console.warn(`[WARN] 404 ${req.method} ${req.originalUrl} rid=${req.id}`);
+  // usa el logger del request para incluir rid automáticamente
+  (req.log || logger).warn(`404 ${req.method} ${req.originalUrl}`);
   res.status(404).json({ message: "Ruta no encontrada" });
 });
 
 /* ----------------- Manejo de errores ------------------ */
 app.use((err, req, res, _next) => {
-  console.error(
-    `[ERROR] rid=${req.id} ${err.message}\n${err.stack || "(sin stack)"}`
-  );
+  (req.log || logger).error(`${err.message}\n${err.stack || "(sin stack)"}`);
   res.status(err.status || 500).json({ message: err.message || "Error interno" });
 });
 
@@ -52,17 +59,16 @@ app.use((err, req, res, _next) => {
 (async () => {
   try {
     await sequelize.authenticate();
-    console.log("✅ DB conectada");
+    logger.info("✅ DB conectada");
 
-    // IMPORTANTE: sin alter para no seguir acumulando índices
     await sequelize.sync();
-    console.log("✅ DB lista y sincronizada");
+    logger.info("✅ DB lista y sincronizada");
 
     app.listen(PORT, () => {
-      console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+      logger.info(`🚀 Servidor corriendo en http://localhost:${PORT}`);
     });
   } catch (err) {
-    console.error("❌ Error al iniciar:", err);
+    logger.error(`❌ Error al iniciar: ${err.message}`);
     process.exit(1);
   }
 })();

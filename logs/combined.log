@@ -2,3 +2,6 @@
 2025-10-06 09:10:13 [32minfo[39m: ✅ DB lista y sincronizada
 2025-10-06 09:10:13 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
 2025-10-06 09:11:38 [32minfo[39m: 2025-10-06T15:11:38.640Z GET /api 200 3.918 ms rid=aceed392-f919-4fa1-a727-84bdec72f6b2
+2025-10-06 09:31:13 [32minfo[39m: ✅ DB conectada
+2025-10-06 09:31:13 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-06 09:31:13 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000

@@ -10,7 +10,6 @@ const CACHE_TTL = Number(process.env.RATES_CACHE_TTL || 60);
 let cache = { ts: 0, base: null, rates: null };
 const fresh = (ts) => Date.now() - ts < CACHE_TTL * 1000;
 
-// ----------------- FIAT PROVIDERS -----------------
 async function getFiatRates(base) {
   // 1) exchangerate.host
   try {
@@ -20,10 +19,9 @@ async function getFiatRates(base) {
       return data.rates;
     }
   } catch (_) {
-    // si falla, seguimos al fallback
+
   }
 
-  // 2) frankfurter.app
   try {
     const url2 = `https://api.frankfurter.app/latest?from=${encodeURIComponent(base)}`;
     const { data } = await axios.get(url2, { timeout: 6000 });
@@ -31,14 +29,11 @@ async function getFiatRates(base) {
       return data.rates;
     }
   } catch (_) {
-    // si falla, seguimos al mock/error
   }
 
-  // 3) si ambos fallan, lanza error (lo capturará getRates)
   throw new Error("Fiat provider sin datos");
 }
 
-// ----------------- CRYPTO PROVIDER -----------------
 async function getCryptoRatesInBase(base, symbols = ["BTC", "ETH"]) {
   const idMap = { BTC: "bitcoin", ETH: "ethereum" };
   const ids = symbols.map((s) => idMap[s]).filter(Boolean).join(",");
@@ -72,14 +67,12 @@ async function getRates(base = DEFAULT_BASE) {
     return cache.rates;
   }
 
-  // Si el .env indica mock
   if (USE_MOCK) {
     const rates = mockRates(base);
     cache = { ts: Date.now(), base, rates };
     return rates;
   }
 
-  // Intentar proveedores reales
   try {
     const [fiatRates, cryptoRates] = await Promise.all([
       getFiatRates(base),

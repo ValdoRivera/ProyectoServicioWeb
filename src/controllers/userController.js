@@ -16,7 +16,6 @@ exports.registrar = async (req, res, next) => {
   } catch (err) { next(err); }
 };
 
-// POST /api/users/login  (login)
 exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;

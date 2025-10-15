@@ -1,12 +1,18 @@
 // src/controllers/ratesController.js
-const { getRates, convertAndRecord } = require("../services/ratesService");
+const {
+  getRates,
+  convertAndRecord,
+  getWorldCupSymbols,
+} = require("../services/ratesService");
 
 exports.getRates = async (req, res, next) => {
   try {
     const base = (req.query.base || "").toUpperCase();
     const rates = await getRates(base || undefined);
     res.json({ base: base || process.env.FIAT_DEFAULT_BASE || "USD", rates });
-  } catch (err) { next(err); }
+  } catch (err) {
+    next(err);
+  }
 };
 
 exports.convert = async (req, res, next) => {
@@ -18,5 +24,12 @@ exports.convert = async (req, res, next) => {
     }
     const data = await convertAndRecord(amt, from, to);
     res.json(data);
-  } catch (err) { next(err); }
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.symbols = async (_req, res) => {
+  const data = getWorldCupSymbols();
+  res.json({ count: data.length, data });
 };

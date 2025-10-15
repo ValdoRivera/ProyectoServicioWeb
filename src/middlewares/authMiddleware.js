@@ -1,7 +1,8 @@
 const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
-  const token = req.headers["authorization"]?.split(" ")[1]; // "Bearer <token>"
+  const auth = req.headers["authorization"] || "";
+  const token = auth.startsWith("Bearer ") ? auth.slice(7) : null;
 
   if (!token) {
     return res.status(403).json({ message: "Token requerido" });
@@ -9,7 +10,8 @@ module.exports = (req, res, next) => {
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    req.user = decoded; // payload disponible en la request
+    // decoded debe traer al menos { id, email }
+    req.user = decoded;
     next();
   } catch (err) {
     return res.status(401).json({ message: "Token inválido o expirado" });

@@ -6,10 +6,11 @@ exports.registrar = async (req, res, next) => {
     const { nombre, email, password } = req.body;
     const user = await authService.registrarUsuario({ nombre, email, password });
 
-    res.status(201).json({ 
-      id: user.id, 
-      nombre: user.nombre, 
-      email: user.email 
+    // No regresamos password nunca
+    res.status(201).json({
+      id: user.id,
+      nombre: user.nombre,
+      email: user.email
     });
   } catch (err) {
     if (err.message === "Email ya registrado") {
@@ -24,18 +25,18 @@ exports.login = async (req, res, next) => {
     const { email, password } = req.body;
     const user = await authService.loginUsuario({ email, password });
 
-    // Generar token JWT
+    // Generar token JWT con id y email
     const token = jwt.sign(
-      { id: user.id, email: user.email },    // payload
-      process.env.JWT_SECRET,                // clave secreta desde .env
-      { expiresIn: "1h" }                    // duración
+      { id: user.id, email: user.email },
+      process.env.JWT_SECRET,
+      { expiresIn: "1h" }
     );
 
-    res.json({ 
-      id: user.id, 
-      nombre: user.nombre, 
+    res.json({
+      id: user.id,
+      nombre: user.nombre,
       email: user.email,
-      token                                    // 👈 aquí devuelves el token
+      token
     });
   } catch (err) {
     if (err.message === "Credenciales inválidas") {

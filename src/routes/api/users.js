@@ -1,11 +1,15 @@
 // src/routes/api/users.js
 const { Router } = require("express");
 const userController = require("../../controllers/userController");
-const authMiddleware = require("../../middlewares/authMiddleware"); // 👈 nuevo
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 const router = Router();
 
-// GET /api/users (protegida con JWT)
+// Protegidas con JWT
+// GET /api/users -> ahora regresa el usuario del token
 router.get("/", authMiddleware, userController.listar);
+
+// (Opcional) GET /api/users/me -> alternativa explícita
+router.get("/me", authMiddleware, userController.getMe);
 
 module.exports = router;

@@ -5,3 +5,150 @@
 2025-10-06 09:31:13 [32minfo[39m: ✅ DB conectada
 2025-10-06 09:31:13 [32minfo[39m: ✅ DB lista y sincronizada
 2025-10-06 09:31:13 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-10 11:59:58 [32minfo[39m: ✅ DB conectada
+2025-10-10 12:00:00 [32minfo[39m: ✅ DB conectada
+2025-10-10 12:00:00 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-10 12:00:00 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-10 12:00:02 [32minfo[39m: ✅ DB conectada
+2025-10-10 12:00:02 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-10 12:00:02 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-10 12:00:05 [32minfo[39m: ✅ DB conectada
+2025-10-10 12:00:05 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-10 12:00:05 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-10 12:00:07 [32minfo[39m: ✅ DB conectada
+2025-10-10 12:00:07 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-10 12:00:07 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-10 12:00:10 [32minfo[39m: ✅ DB conectada
+2025-10-10 12:00:10 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-10 12:00:10 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-10 12:00:12 [32minfo[39m: ✅ DB conectada
+2025-10-10 12:00:12 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-10 12:00:12 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-10 12:00:15 [32minfo[39m: ✅ DB conectada
+2025-10-10 12:00:15 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-10 12:00:15 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-12 21:53:50 [32minfo[39m: ✅ DB conectada
+2025-10-12 21:53:51 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-12 21:53:51 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-12 21:53:56 [32minfo[39m: 2025-10-13T03:53:56.709Z GET /api/rates/convert?amount=125&from=MXN&to=USD 200 134.790 ms rid=edd33fba-35f5-4a8a-a9ab-578f20028206
+2025-10-12 21:54:59 [32minfo[39m: ✅ DB conectada
+2025-10-12 21:54:59 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-12 21:54:59 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-12 21:55:24 [32minfo[39m: ✅ DB conectada
+2025-10-12 21:55:24 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-12 21:55:24 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-12 21:55:40 [32minfo[39m: ✅ DB conectada
+2025-10-12 21:55:40 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-12 21:55:40 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-12 21:56:22 [32minfo[39m: 2025-10-13T03:56:22.424Z GET /api/rates?base=USD 200 8.888 ms rid=579432aa-2d1c-41e9-92e8-5c90002d04e5
+2025-10-12 21:57:13 [32minfo[39m: 2025-10-13T03:57:13.093Z GET /api/rates/symbols 200 2.996 ms rid=c9d06500-da90-4950-a8a6-0c22d2a824ce
+2025-10-12 21:58:21 [32minfo[39m: 2025-10-13T03:58:21.068Z GET /api/rates/symbols 200 1.842 ms rid=57f05836-2580-4208-aff1-23997c7125aa
+2025-10-12 21:58:21 [33mwarn[39m: 404 GET /favicon.ico rid=3ef1ecfa-a126-4e60-9a18-3c9f5c336a2c
+2025-10-12 21:58:21 [32minfo[39m: 2025-10-13T03:58:21.276Z GET /favicon.ico 404 7.277 ms rid=3ef1ecfa-a126-4e60-9a18-3c9f5c336a2c
+2025-10-13 08:13:24 [32minfo[39m: ✅ DB conectada
+2025-10-13 08:13:24 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-13 08:13:25 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-13 08:13:31 [32minfo[39m: ✅ DB conectada
+2025-10-13 08:13:31 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-13 08:13:31 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-13 08:24:10 [32minfo[39m: 2025-10-13T14:24:10.623Z GET /api/rates/symbols 200 17.834 ms rid=60544753-894c-4e37-8545-acc8975c6d79
+2025-10-13 08:24:27 [32minfo[39m: 2025-10-13T14:24:27.202Z GET /api/rates?base=USD 200 3.808 ms rid=e16e6453-d439-4917-95a9-a7ece2098efd
+2025-10-13 08:24:58 [32minfo[39m: 2025-10-13T14:24:58.276Z GET /api/rates/convert?amount=125&from=MXN&to=USD 200 279.396 ms rid=8b58781d-8e9f-4adc-a6b4-8a38ad4c3696
+2025-10-13 08:25:22 [32minfo[39m: 2025-10-13T14:25:22.243Z GET /api/rates 200 2.545 ms rid=45f71003-bbdd-4cda-8c43-8572b4fe2962
+2025-10-13 08:25:49 [32minfo[39m: 2025-10-13T14:25:49.677Z GET /api/users 403 1.160 ms rid=40d27320-1bfa-4e81-a90d-b645fb21f361
+2025-10-13 08:26:00 [32minfo[39m: 2025-10-13T14:26:00.934Z POST /api/auth/login 200 284.371 ms rid=f2b90ff7-f175-4739-965a-1e582fc0956b
+2025-10-13 08:26:31 [32minfo[39m: 2025-10-13T14:26:31.207Z POST /api/auth/login 200 164.643 ms rid=dfa29d1f-8f14-4ee5-8bae-a87e15178972
+2025-10-13 08:26:37 [32minfo[39m: 2025-10-13T14:26:37.787Z GET /api/users 403 0.557 ms rid=7ef9206f-022e-47ae-9dd9-9f3d882a8281
+2025-10-13 08:28:16 [32minfo[39m: 2025-10-13T14:28:16.539Z GET /api/users 200 35.295 ms rid=57442500-0ba8-4c81-abb9-66166cd15d36
+2025-10-13 08:28:45 [32minfo[39m: 2025-10-13T14:28:45.182Z POST /api/auth/login 400 5.426 ms rid=cdaa4b29-d738-4572-969a-f2fee5771530
+2025-10-13 08:28:51 [32minfo[39m: 2025-10-13T14:28:51.599Z POST /api/auth/login 200 181.125 ms rid=252522d7-e7e9-4ac6-889a-a883f61598a8
+2025-10-13 08:29:14 [32minfo[39m: 2025-10-13T14:29:14.398Z GET /api/users 200 53.230 ms rid=968ff57c-3917-4ab8-a5b7-35625af03ebe
+2025-10-13 08:29:55 [32minfo[39m: 2025-10-13T14:29:55.681Z GET /api/rates/convert?amount=125&from=MXN&to=ARS 200 78.723 ms rid=59af6b6a-5be0-4a38-a91a-ab415cdc3f7b
+2025-10-13 08:30:11 [32minfo[39m: 2025-10-13T14:30:11.380Z POST /api/auth/login 200 175.630 ms rid=908a4a5e-8798-4635-902a-5f1a68500354
+2025-10-13 08:30:22 [32minfo[39m: 2025-10-13T14:30:22.844Z GET /api/users 401 2.355 ms rid=530d174d-ba52-4981-84b5-3f7b113af654
+2025-10-13 08:30:41 [32minfo[39m: 2025-10-13T14:30:41.550Z GET /api/users 401 2.557 ms rid=78d068a7-7e5a-4abd-b629-e21226e91d06
+2025-10-13 08:30:45 [32minfo[39m: 2025-10-13T14:30:45.242Z GET /api 200 0.443 ms rid=b8f52c1e-a0f8-4675-9af5-1bb99c8051c5
+2025-10-13 08:30:57 [32minfo[39m: 2025-10-13T14:30:57.110Z GET /api/rates?base=MXN 200 0.479 ms rid=84e09d9a-d5ba-404e-b717-bfeb08a5cae5
+2025-10-13 08:31:07 [32minfo[39m: 2025-10-13T14:31:07.513Z GET /api/rates?base=ARS 200 0.643 ms rid=7437f759-ba7e-4e79-86e8-ad0c42b983f1
+2025-10-13 08:40:31 [32minfo[39m: ✅ DB conectada
+2025-10-13 08:40:31 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-13 08:40:31 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-13 08:40:36 [32minfo[39m: ✅ DB conectada
+2025-10-13 08:40:37 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-13 08:40:37 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-13 08:40:40 [32minfo[39m: ✅ DB conectada
+2025-10-13 08:40:40 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-13 08:40:40 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-13 08:40:43 [32minfo[39m: ✅ DB conectada
+2025-10-13 08:40:43 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-13 08:40:43 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-13 08:51:42 [32minfo[39m: 2025-10-13T14:51:42.826Z POST /api/auth/register 409 41.704 ms rid=4083905a-4c19-499b-a118-1e9d511a6b1f
+2025-10-13 08:52:00 [33mwarn[39m: 404 GET /api/user rid=303bcd2e-667a-43d4-b18c-39e1f2408e45
+2025-10-13 08:52:00 [32minfo[39m: 2025-10-13T14:52:00.238Z GET /api/user 404 3.630 ms rid=303bcd2e-667a-43d4-b18c-39e1f2408e45
+2025-10-13 08:52:05 [32minfo[39m: 2025-10-13T14:52:05.941Z GET /api/users 200 28.036 ms rid=d949eb43-ec44-4586-abae-5fe86c8ae592
+2025-10-13 08:52:14 [33mwarn[39m: 404 POST /api/users/login rid=69bcac25-e715-4b55-90c2-89a6e728b812
+2025-10-13 08:52:14 [32minfo[39m: 2025-10-13T14:52:14.799Z POST /api/users/login 404 2.930 ms rid=69bcac25-e715-4b55-90c2-89a6e728b812
+2025-10-13 08:52:20 [33mwarn[39m: 404 POST /api/users rid=a02fa75c-0e0d-42c9-8f5c-e4d42b4f0a8c
+2025-10-13 08:52:20 [32minfo[39m: 2025-10-13T14:52:20.549Z POST /api/users 404 0.951 ms rid=a02fa75c-0e0d-42c9-8f5c-e4d42b4f0a8c
+2025-10-13 08:52:28 [32minfo[39m: 2025-10-13T14:52:28.155Z POST /api/auth/login 200 81.749 ms rid=fe67996a-48bf-46f8-9287-cfe3e6a11ca3
+2025-10-13 08:54:27 [32minfo[39m: 2025-10-13T14:54:27.136Z POST /api/auth/login 200 91.466 ms rid=8feff564-0c4b-47b3-b1bd-b4fb67cde66d
+2025-10-13 08:55:46 [33mwarn[39m: 404 POST /api/users/ rid=800535fe-0714-41af-8958-46443d9638f1
+2025-10-13 08:55:46 [32minfo[39m: 2025-10-13T14:55:46.549Z POST /api/users/ 404 0.824 ms rid=800535fe-0714-41af-8958-46443d9638f1
+2025-10-13 08:55:51 [33mwarn[39m: 404 POST /api/users rid=4770645a-f8db-410d-9db2-7f50603ff527
+2025-10-13 08:55:51 [32minfo[39m: 2025-10-13T14:55:51.341Z POST /api/users 404 2.308 ms rid=4770645a-f8db-410d-9db2-7f50603ff527
+2025-10-13 08:55:52 [33mwarn[39m: 404 POST /api/users rid=1e197499-ab1d-426c-8d20-a5b5fd3ebe42
+2025-10-13 08:55:52 [32minfo[39m: 2025-10-13T14:55:52.376Z POST /api/users 404 3.419 ms rid=1e197499-ab1d-426c-8d20-a5b5fd3ebe42
+2025-10-13 08:55:58 [33mwarn[39m: 404 POST /api/users rid=a4961f7e-2ab2-4329-ad65-97d0bd81e44c
+2025-10-13 08:55:58 [32minfo[39m: 2025-10-13T14:55:58.795Z POST /api/users 404 0.918 ms rid=a4961f7e-2ab2-4329-ad65-97d0bd81e44c
+2025-10-13 08:56:10 [32minfo[39m: 2025-10-13T14:56:10.295Z POST /api/auth/login 200 74.606 ms rid=45bdf2ea-61d7-405d-824d-2f7a850d488d
+2025-10-13 08:56:35 [33mwarn[39m: 404 POST /api/users rid=94b9fd6a-dc63-4741-a853-cfafe0fe0efb
+2025-10-13 08:56:35 [32minfo[39m: 2025-10-13T14:56:35.370Z POST /api/users 404 1.285 ms rid=94b9fd6a-dc63-4741-a853-cfafe0fe0efb
+2025-10-13 08:56:41 [33mwarn[39m: 404 POST /api/users/ rid=b66588f3-b429-4afe-8184-62d83d78c6bc
+2025-10-13 08:56:41 [32minfo[39m: 2025-10-13T14:56:41.850Z POST /api/users/ 404 1.296 ms rid=b66588f3-b429-4afe-8184-62d83d78c6bc
+2025-10-13 08:56:42 [33mwarn[39m: 404 POST /api/users/ rid=2903f535-119b-4838-a7fa-983c699f638b
+2025-10-13 08:56:42 [32minfo[39m: 2025-10-13T14:56:42.921Z POST /api/users/ 404 0.759 ms rid=2903f535-119b-4838-a7fa-983c699f638b
+2025-10-13 09:03:58 [33mwarn[39m: 404 POST /api/user rid=755496d6-9c90-402f-8169-cd9780962e97
+2025-10-13 09:03:58 [32minfo[39m: 2025-10-13T15:03:58.190Z POST /api/user 404 34.421 ms rid=755496d6-9c90-402f-8169-cd9780962e97
+2025-10-13 09:04:00 [33mwarn[39m: 404 POST /api/user rid=7cfe1652-77c9-4286-8420-21ea286788d2
+2025-10-13 09:04:00 [32minfo[39m: 2025-10-13T15:04:00.665Z POST /api/user 404 1.296 ms rid=7cfe1652-77c9-4286-8420-21ea286788d2
+2025-10-13 09:04:05 [33mwarn[39m: 404 POST /api/users rid=75ae65c9-fa21-4dac-a193-cb164e2af6bd
+2025-10-13 09:04:05 [32minfo[39m: 2025-10-13T15:04:05.676Z POST /api/users 404 0.761 ms rid=75ae65c9-fa21-4dac-a193-cb164e2af6bd
+2025-10-13 09:04:10 [32minfo[39m: 2025-10-13T15:04:10.222Z GET /api/users 200 13.921 ms rid=a43ec059-084a-46c6-9d96-bae833570f9f
+2025-10-13 09:04:19 [33mwarn[39m: 404 GET /api/user rid=797a61d7-92e8-40e4-a2da-0ad076acf75f
+2025-10-13 09:04:19 [32minfo[39m: 2025-10-13T15:04:19.497Z GET /api/user 404 1.201 ms rid=797a61d7-92e8-40e4-a2da-0ad076acf75f
+2025-10-13 09:04:24 [32minfo[39m: 2025-10-13T15:04:24.199Z GET /api/users 200 52.703 ms rid=853e92c9-0bff-4f79-b88c-d06311998193
+2025-10-13 09:04:29 [32minfo[39m: 2025-10-13T15:04:29.547Z GET /api/users 403 0.356 ms rid=12babf67-16f7-4b4b-9b4e-e2598036f0c0
+2025-10-13 09:05:02 [32minfo[39m: 2025-10-13T15:05:02.217Z GET /api/users 401 2.909 ms rid=d77cd94a-c48e-403c-bb9c-7be394cbc095
+2025-10-13 09:09:00 [32minfo[39m: 2025-10-13T15:09:00.373Z POST /api/auth/login 200 128.363 ms rid=d1342922-6856-454b-9228-b209af3e70b0
+2025-10-13 09:09:31 [32minfo[39m: 2025-10-13T15:09:31.161Z GET /api/users 200 61.708 ms rid=ebaa1bca-4b58-4849-b0c2-3d0066ef76c6
+2025-10-13 09:20:51 [32minfo[39m: ✅ DB conectada
+2025-10-13 09:20:51 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-13 09:20:51 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-13 09:37:46 [32minfo[39m: 2025-10-13T15:37:46.983Z GET /api/rates/convert?amount=125&from=MXN&to=USD 200 110.221 ms rid=028d01db-938a-4ce9-be3c-000fbb51c542
+2025-10-13 09:38:13 [32minfo[39m: 2025-10-13T15:38:13.637Z GET /api/rates?base=BRL 200 0.801 ms rid=9c6b8d2c-e001-4b90-ae30-7222befdf005
+2025-10-13 09:52:32 [32minfo[39m: ✅ DB conectada
+2025-10-13 09:52:32 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-13 09:52:32 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-15 15:15:45 [32minfo[39m: 2025-10-15T21:15:45.542Z GET /api/rates?base=BRL 200 79.087 ms rid=aa15a8f3-aa7c-4222-81a6-3c870655c2b1
+2025-10-15 15:15:54 [32minfo[39m: 2025-10-15T21:15:54.358Z GET /api 200 1.452 ms rid=909c5b08-f1c2-4e8d-bdd8-5eca969d488f
+2025-10-15 15:15:59 [32minfo[39m: 2025-10-15T21:15:59.148Z GET /api/rates/convert?amount=125&from=MXN&to=USD 200 523.277 ms rid=53570ee1-f6db-4c4d-945c-0d6e6ff0c887
+2025-10-15 15:16:03 [32minfo[39m: 2025-10-15T21:16:03.975Z GET /api/rates 200 39.734 ms rid=ebe25e14-f3e6-4266-bff1-69e6624d21de
+2025-10-15 15:16:13 [32minfo[39m: 2025-10-15T21:16:13.763Z GET /api/users 401 50.990 ms rid=d2466703-fe81-4dec-82dc-29c900bb838a
+2025-10-15 15:16:27 [32minfo[39m: 2025-10-15T21:16:27.374Z POST /api/auth/register 409 151.303 ms rid=0df1deff-4027-405a-a25b-284daf496df4
+2025-10-15 15:16:31 [32minfo[39m: 2025-10-15T21:16:31.348Z POST /api/auth/login 200 210.115 ms rid=26761c17-6205-4b2d-9ec5-b8be3662f6e8
+2025-10-15 15:17:00 [32minfo[39m: 2025-10-15T21:17:00.886Z GET /api/users 200 25.663 ms rid=a027c3ac-f450-4e0c-802f-a452d702825f
+2025-10-15 15:24:31 [32minfo[39m: ✅ DB conectada
+2025-10-15 15:24:32 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-15 15:24:32 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-15 15:24:52 [32minfo[39m: ✅ DB conectada
+2025-10-15 15:24:53 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-15 15:24:53 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-15 15:25:20 [32minfo[39m: ✅ DB conectada
+2025-10-15 15:25:20 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-15 15:25:20 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-15 15:25:40 [32minfo[39m: ✅ DB conectada
+2025-10-15 15:25:40 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-15 15:25:40 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-10-15 15:26:01 [32minfo[39m: ✅ DB conectada
+2025-10-15 15:26:01 [32minfo[39m: ✅ DB lista y sincronizada
+2025-10-15 15:26:01 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000

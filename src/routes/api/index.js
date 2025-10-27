@@ -1,19 +1,19 @@
 const { Router } = require("express");
 const router = Router();
 
-// 1) Públicas opcionales (healthcheck)
+// Healthcheck
 router.get("/", (_req, res) => res.json({ ok: true, api: "divisas-cripto" }));
 
-// 2) Rutas de rates
-const ratesRoutes = require("./rates");
-router.use("/rates", ratesRoutes);
+// Rates
+router.use("/rates", require("./rates"));
 
-// 3) Rutas de autenticación
-const authRoutes = require("./auth.route");
-router.use("/auth", authRoutes);
+// Auth
+router.use("/auth", require("./auth.route"));
 
-// 4) Rutas de usuarios
-const usersRoutes = require("./users");
-router.use("/users", usersRoutes);
+// Users (público: datos mínimos por ID)
+router.use("/users", require("./users"));
+
+// User (privado: datos completos por ID)  ⬅️ IMPORTANTE
+router.use("/user", require("./user"));
 
 module.exports = router;

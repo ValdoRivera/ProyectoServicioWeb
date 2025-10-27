@@ -1,0 +1,76 @@
+2025-10-15 15:32:03 [31merror[39m: No hay tasa para JPN
+Error: No hay tasa para JPN
+    at convert (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\ratesService.js:141:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async convertAndRecord (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\ratesService.js:160:16)
+    at async exports.convert (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\ratesController.js:25:18) rid=b75adebd-a14b-4a55-8609-d226ce333c22
+2025-10-26 19:51:19 [31merror[39m: Credenciales inválidas
+Error: Credenciales inválidas
+    at exports.loginUsuario (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\authService.js:43:11)
+    at async exports.login (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\authController.js:21:16) rid=e676d4b6-ae88-4cdd-bdc9-dde8eb7ea654
+2025-10-26 19:51:27 [31merror[39m: Email ya registrado
+Error: Email ya registrado
+    at exports.registrarUsuario (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\authService.js:17:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async exports.registrar (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\authController.js:8:16) rid=a8c87e35-935d-4983-9172-5aeb4bfe69cc
+2025-10-26 19:51:31 [31merror[39m: Credenciales inválidas
+Error: Credenciales inválidas
+    at exports.loginUsuario (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\authService.js:43:11)
+    at async exports.login (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\authController.js:21:16) rid=4e9fca21-936f-4536-9ec6-987fbf83eea8
+2025-10-26 20:15:40 [31merror[39m: Credenciales inválidas
+Error: Credenciales inválidas
+    at exports.loginUsuario (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\authService.js:43:11)
+    at async exports.login (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\authController.js:21:16) rid=2aeef0da-1b5b-4c57-a485-dcd5ded9dc17
+2025-10-26 20:15:55 [31merror[39m: Email ya registrado
+Error: Email ya registrado
+    at exports.registrarUsuario (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\authService.js:17:11)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async exports.registrar (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\authController.js:8:16) rid=876fcd0a-33c7-414f-839d-2472c376a2a6
+2025-10-26 21:17:49 [31merror[39m: Credenciales inválidas
+Error: Credenciales inválidas
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\test\_mocks_\services\authService.js:9:13)
+    at C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:305:39
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:312:13)
+    at Object.mockConstructor [as loginUsuario] (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:57:19)
+    at loginUsuario (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\authController.js:21:34)
+    at Layer.handleRequest (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\route.js:157:13)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\auth.route.js:38:3)
+    at Layer.handleRequest (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\route.js:157:13)
+    at middleware (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5) rid=908168bf-3b5e-4126-93ff-7d3889cccc1c
+2025-10-26 21:24:14 [31merror[39m: Credenciales inválidas
+Error: Credenciales inválidas
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\test\_mocks_\services\authService.js:9:13)
+    at C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:305:39
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:312:13)
+    at Object.mockConstructor [as loginUsuario] (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:57:19)
+    at loginUsuario (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\authController.js:21:34)
+    at Layer.handleRequest (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\route.js:157:13)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\auth.route.js:38:3)
+    at Layer.handleRequest (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\route.js:157:13)
+    at middleware (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5) rid=e4e84781-5044-4881-b8d9-f1e5b9b9c063
+2025-10-26 21:26:33 [31merror[39m: Credenciales inválidas
+Error: Credenciales inválidas
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\test\_mocks_\services\authService.js:11:19)
+    at C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:305:39
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:312:13)
+    at Object.mockConstructor [as loginUsuario] (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\jest-mock\build\index.js:57:19)
+    at loginUsuario (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\authController.js:21:34)
+    at Layer.handleRequest (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\route.js:157:13)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\auth.route.js:38:3)
+    at Layer.handleRequest (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\route.js:157:13)
+    at middleware (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\express-validator\lib\middlewares\check.js:16:13)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5) rid=3d533b8f-269e-40bb-abcf-35b9c0e3a01f
+2025-10-26 23:04:42 [31merror[39m: No hay tasa para ARG
+Error: No hay tasa para ARG
+    at convert (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\ratesService.js:150:22)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async convertWithBonuses (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\ratesService.js:205:16)
+    at async exports.convert (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\ratesController.js:27:16) rid=e6585d3d-a366-4223-9a44-53ff58ca2694

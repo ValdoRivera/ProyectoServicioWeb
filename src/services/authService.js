@@ -2,24 +2,27 @@
 const bcrypt = require("bcrypt");
 const Usuario = require("../models/Usuario");
 
+// Helper mínimo para errores HTTP
+function httpError(message, status) {
+  const err = new Error(message);
+  err.status = status;
+  return err;
+}
+
 /**
  * Registrar un nuevo usuario
- * @param {Object} data - Datos del usuario
+ * @param {Object} data
  * @param {string} data.nombre
  * @param {string} data.email
  * @param {string} data.password
- * @returns {Promise<Usuario>}
  */
 exports.registrarUsuario = async ({ nombre, email, password }) => {
-  // Verificar si el email ya existe
   const existe = await Usuario.findOne({ where: { email } });
   if (existe) {
-    throw new Error("Email ya registrado");
+    throw httpError("Email ya registrado", 409); // CONFLICT
   }
 
   const hash = await bcrypt.hash(password, 10);
-
-  // Crear usuario
   return Usuario.create({ nombre, email, password: hash });
 };
 
@@ -28,19 +31,16 @@ exports.registrarUsuario = async ({ nombre, email, password }) => {
  * @param {Object} data
  * @param {string} data.email
  * @param {string} data.password
- * @returns {Promise<Usuario>}
  */
 exports.loginUsuario = async ({ email, password }) => {
-  // Buscar usuario
   const user = await Usuario.findOne({ where: { email } });
   if (!user) {
-    throw new Error("Credenciales inválidas");
+    throw httpError("Credenciales inválidas", 401); // UNAUTHORIZED
   }
 
-  // Comparar contraseña
   const ok = await bcrypt.compare(password, user.password);
   if (!ok) {
-    throw new Error("Credenciales inválidas");
+    throw httpError("Credenciales inválidas", 401); // UNAUTHORIZED
   }
 
   return user;

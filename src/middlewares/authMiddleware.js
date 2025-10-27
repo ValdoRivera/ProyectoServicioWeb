@@ -8,12 +8,12 @@ module.exports = (req, res, next) => {
     return res.status(403).json({ message: "Token requerido" });
   }
 
-  try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
-    // decoded debe traer al menos { id, email }
-    req.user = decoded;
+  // Verifica el token y setea req.user; sin try/catch, con manejo del callback
+  jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return res.status(401).json({ message: "Token inválido o expirado" });
+    }
+    req.user = decoded; // { id, email, ... }
     next();
-  } catch (err) {
-    return res.status(401).json({ message: "Token inválido o expirado" });
-  }
+  });
 };

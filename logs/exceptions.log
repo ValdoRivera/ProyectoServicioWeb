@@ -1,0 +1,162 @@
+2025-10-18 11:39:07 [31merror[39m: uncaughtException: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+Error: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js:9:20)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-18 11:39:24 [31merror[39m: uncaughtException: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+Error: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js:9:20)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-18 11:42:43 [31merror[39m: uncaughtException: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+Error: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js:9:20)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-18 11:43:01 [31merror[39m: uncaughtException: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+Error: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js:9:20)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-18 11:54:57 [31merror[39m: uncaughtException: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+Error: Cannot find module './auth.route'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js:9:20)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-19 07:49:01 [31merror[39m: uncaughtException: Cannot find module '../services/authService'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\auth.route.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+Error: Cannot find module '../services/authService'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\auth.route.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js:1:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-19 07:58:07 [31merror[39m: uncaughtException: Cannot find module '../services/authService'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\auth.route.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+Error: Cannot find module '../services/authService'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\auth.route.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js:1:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-19 08:02:35 [31merror[39m: uncaughtException: Cannot find module '../services/authService'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\auth.route.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+Error: Cannot find module '../services/authService'
+Require stack:
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\auth.route.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\api\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\routes\index.js
+- C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\braya\OneDrive\Documentos\GitHub\primer-servicio\src\controllers\authController.js:1:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)

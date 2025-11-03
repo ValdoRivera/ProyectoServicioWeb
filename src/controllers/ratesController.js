@@ -9,19 +9,14 @@ const {
 exports.getRates = async (req, res) => {
   const base = (req.query.base || "").toUpperCase();
   const rates = await getRates(base || undefined);
-  res.json({
-    base: base || process.env.FIAT_DEFAULT_BASE || "USD",
-    rates,
-  });
+  res.json({ base: base || process.env.FIAT_DEFAULT_BASE || "USD", rates });
 };
 
 exports.convert = async (req, res) => {
-  const { amount, from, to, isMatchDay, promoCode, rank } = req.query;
+  const { amount, from, to, isMatchDay, promoCode, rank, teamName } = req.query;
 
   if (!from || !to || !amount || isNaN(amount)) {
-    return res.status(400).json({
-      message: "Parámetros requeridos: amount, from, to",
-    });
+    return res.status(400).json({ message: "Parámetros requeridos: amount, from, to" });
   }
 
   const data = await convertWithBonuses({
@@ -31,6 +26,7 @@ exports.convert = async (req, res) => {
     isMatchDay: String(isMatchDay || "").toLowerCase() === "true",
     promoCode,
     rank: rank != null ? Number(rank) : undefined,
+    teamName, //  nuevo
   });
 
   await convertAndRecord(amount, from, to);

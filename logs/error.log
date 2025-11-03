@@ -74,3 +74,30 @@ Error: No hay tasa para ARG
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
     at async convertWithBonuses (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\ratesService.js:205:16)
     at async exports.convert (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\ratesController.js:27:16) rid=e6585d3d-a366-4223-9a44-53ff58ca2694
+2025-11-02 20:18:21 [31merror[39m: Request failed with status code 404
+AxiosError: Request failed with status code 404
+    at settle (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:2097:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:3305:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:4483:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async fetchFifaRankMap (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:47:20)
+    at async getFifaRankMap (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:67:15)
+    at async getTeamRank (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:74:15)
+    at async convertWithBonuses (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\ratesService.js:162:22)
+    at async exports.convert (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\ratesController.js:22:16) rid=63d9448e-3eef-4504-b4c5-2416a82004fe
+2025-11-02 20:18:48 [31merror[39m: Request failed with status code 404
+AxiosError: Request failed with status code 404
+    at settle (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:2097:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:3305:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:4483:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async fetchFifaRankMap (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:47:20)
+    at async getFifaRankMap (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:67:15)
+    at async getTeamRank (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:74:15)
+    at async C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\rates.js:95:16 rid=01e55bef-181c-4888-bd89-078845345e1e

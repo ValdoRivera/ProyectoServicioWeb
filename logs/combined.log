@@ -527,3 +527,145 @@ Error: No hay tasa para ARG
     at async exports.convert (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\ratesController.js:27:16) rid=e6585d3d-a366-4223-9a44-53ff58ca2694
 2025-10-26 23:04:42 [32minfo[39m: 2025-10-27T05:04:42.340Z GET /api/rates/convert?amount=150&from=MXN&to=ARG&isMatchDay=true&rank=4&promoCode=GOAL10 500 42.074 ms rid=e6585d3d-a366-4223-9a44-53ff58ca2694
 2025-10-26 23:05:13 [32minfo[39m: 2025-10-27T05:05:13.835Z GET /api/rates/convert?amount=150&from=MXN&to=ARS&isMatchDay=true&rank=4&promoCode=GOAL10 200 60.083 ms rid=4113b220-c1cf-44c3-8bea-b481264bafd7
+2025-11-02 18:53:28 [32minfo[39m: ✅ DB conectada
+2025-11-02 18:53:29 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 18:53:29 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 18:53:29 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 19:17:39 [32minfo[39m: ✅ DB conectada
+2025-11-02 19:17:39 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 19:17:39 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 19:17:39 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 19:22:36 [32minfo[39m: ✅ DB conectada
+2025-11-02 19:22:36 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 19:22:36 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 19:22:36 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 20:16:02 [32minfo[39m: ✅ DB conectada
+2025-11-02 20:16:02 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 20:16:02 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 20:16:02 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 20:16:30 [32minfo[39m: ✅ DB conectada
+2025-11-02 20:16:30 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 20:16:30 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 20:16:30 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 20:16:54 [32minfo[39m: ✅ DB conectada
+2025-11-02 20:16:54 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 20:16:54 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 20:16:54 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 20:17:12 [32minfo[39m: ✅ DB conectada
+2025-11-02 20:17:12 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 20:17:12 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 20:17:12 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 20:18:21 [31merror[39m: Request failed with status code 404
+AxiosError: Request failed with status code 404
+    at settle (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:2097:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:3305:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:4483:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async fetchFifaRankMap (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:47:20)
+    at async getFifaRankMap (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:67:15)
+    at async getTeamRank (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:74:15)
+    at async convertWithBonuses (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\ratesService.js:162:22)
+    at async exports.convert (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\controllers\ratesController.js:22:16) rid=63d9448e-3eef-4504-b4c5-2416a82004fe
+2025-11-02 20:18:21 [32minfo[39m: 2025-11-03T02:18:21.644Z GET /api/rates/convert?amount=150&from=USD&to=MXN&teamName=Argentina 404 780.457 ms rid=63d9448e-3eef-4504-b4c5-2416a82004fe
+2025-11-02 20:18:21 [33mwarn[39m: 404 GET /favicon.ico rid=d79c24cd-cfd5-40cf-a0aa-cf40a005e0a1
+2025-11-02 20:18:21 [32minfo[39m: 2025-11-03T02:18:21.859Z GET /favicon.ico 404 7.246 ms rid=d79c24cd-cfd5-40cf-a0aa-cf40a005e0a1
+2025-11-02 20:18:48 [31merror[39m: Request failed with status code 404
+AxiosError: Request failed with status code 404
+    at settle (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:2097:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:3305:11)
+    at IncomingMessage.emit (node:events:530:35)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)
+    at Axios.request (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\axios\dist\node\axios.cjs:4483:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async fetchFifaRankMap (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:47:20)
+    at async getFifaRankMap (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:67:15)
+    at async getTeamRank (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\services\rankService.js:74:15)
+    at async C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\rates.js:95:16 rid=01e55bef-181c-4888-bd89-078845345e1e
+2025-11-02 20:18:48 [32minfo[39m: 2025-11-03T02:18:48.923Z GET /api/rates/rank?team=Spain 404 865.063 ms rid=01e55bef-181c-4888-bd89-078845345e1e
+2025-11-02 20:18:49 [33mwarn[39m: 404 GET /favicon.ico rid=3ef38798-ccac-49d9-bb3c-de3487f571fb
+2025-11-02 20:18:49 [32minfo[39m: 2025-11-03T02:18:49.040Z GET /favicon.ico 404 1.078 ms rid=3ef38798-ccac-49d9-bb3c-de3487f571fb
+2025-11-02 20:19:24 [32minfo[39m: 2025-11-03T02:19:24.064Z GET /api/rates 200 3.502 ms rid=2a0f4626-3c03-4eca-99ad-984cedcc4007
+2025-11-02 20:19:48 [32minfo[39m: 2025-11-03T02:19:48.136Z GET /api-docs 301 4.542 ms rid=dc2c9e6c-d54f-4ade-b2ae-4b19ce409e6d
+2025-11-02 20:19:48 [32minfo[39m: 2025-11-03T02:19:48.149Z GET /api-docs/ 200 5.730 ms rid=42a6a5d1-2345-4c6e-8ebf-22cd5951f78c
+2025-11-02 21:03:24 [32minfo[39m: ✅ DB conectada
+2025-11-02 21:03:24 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 21:03:24 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 21:03:24 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 21:03:52 [32minfo[39m: ✅ DB conectada
+2025-11-02 21:03:52 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 21:03:52 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 21:03:52 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 21:04:20 [32minfo[39m: ✅ DB conectada
+2025-11-02 21:04:20 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 21:04:20 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 21:04:20 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 21:04:23 [32minfo[39m: ✅ DB conectada
+2025-11-02 21:04:23 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 21:04:23 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 21:04:23 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 21:04:48 [32minfo[39m: ✅ DB conectada
+2025-11-02 21:04:48 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 21:04:48 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 21:04:48 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 21:05:31 [32minfo[39m: 2025-11-03T03:05:31.262Z GET /api/rates/rank?team=Spain 200 591.563 ms rid=5d69b991-3c0c-4f96-a442-bf68db439955
+2025-11-02 21:05:31 [33mwarn[39m: 404 GET /favicon.ico rid=64fd1f14-38e8-48df-ac79-4714ebf24479
+2025-11-02 21:05:31 [32minfo[39m: 2025-11-03T03:05:31.338Z GET /favicon.ico 404 5.565 ms rid=64fd1f14-38e8-48df-ac79-4714ebf24479
+2025-11-02 21:09:09 [32minfo[39m: ✅ DB conectada
+2025-11-02 21:09:09 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 21:09:09 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 21:09:09 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 21:09:51 [32minfo[39m: ✅ DB conectada
+2025-11-02 21:09:51 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-02 21:09:51 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-02 21:09:51 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-02 21:15:05 [32minfo[39m: 2025-11-03T03:15:05.274Z GET /api/rates/rank?team=Spain 200 3.007 ms rid=11460a82-5541-4685-856a-099bff27bd50
+2025-11-02 21:15:40 [32minfo[39m: 2025-11-03T03:15:40.836Z GET /api/rates/symbols 200 3.999 ms rid=08a79eb5-54bc-4fea-a7d9-3f5a4b01875d
+2025-11-02 21:18:09 [32minfo[39m: 2025-11-03T03:18:09.639Z GET /api/rates/rank?team=Argentina 200 0.793 ms rid=0deb3ddc-cd4e-4905-9a40-384e17ae247b
+2025-11-02 21:18:17 [32minfo[39m: 2025-11-03T03:18:17.913Z GET /api/rates/rank?team=Alemania 200 0.654 ms rid=4f75cf1e-8ef2-4570-b899-ef0ebbba4101
+2025-11-02 21:18:25 [32minfo[39m: 2025-11-03T03:18:25.168Z GET /api/rates/rank?team=Mexico 200 0.638 ms rid=f06e22fe-f4e9-4e43-b516-da62d6dcbe8f
+2025-11-02 21:18:31 [32minfo[39m: 2025-11-03T03:18:31.480Z GET /api/rates/rank?team=Brasil 200 0.540 ms rid=0601e404-42d7-4769-a6ad-a96238f0d3d1
+2025-11-02 21:18:40 [32minfo[39m: 2025-11-03T03:18:40.090Z GET /api/rates/rank?team=Brazil 200 0.679 ms rid=893d2869-7d40-4a31-a5fe-f069344c8cf6
+2025-11-02 21:18:51 [32minfo[39m: 2025-11-03T03:18:51.547Z GET /api/rates/rank?team=Germany 200 0.567 ms rid=5041bec7-78d0-49d8-8f18-cbd04ca21387
+2025-11-02 21:18:58 [32minfo[39m: 2025-11-03T03:18:58.407Z GET /api/rates/rank?team=Francia 200 0.842 ms rid=112f8341-d02b-4400-a2ad-9398468526b4
+2025-11-03 08:22:16 [32minfo[39m: ✅ DB conectada
+2025-11-03 08:22:16 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-03 08:22:16 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-03 08:22:16 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-03 08:22:31 [32minfo[39m: DB conectada
+2025-11-03 08:22:31 [32minfo[39m: ✅ DB lista y sincronizada
+2025-11-03 08:22:31 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-03 08:22:31 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-03 08:22:34 [32minfo[39m: DB conectada
+2025-11-03 08:22:34 [32minfo[39m: DB lista y sincronizada
+2025-11-03 08:22:34 [32minfo[39m: 🚀 Servidor corriendo en http://localhost:3000
+2025-11-03 08:22:34 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-03 08:22:41 [32minfo[39m: DB conectada
+2025-11-03 08:22:41 [32minfo[39m: DB lista y sincronizada
+2025-11-03 08:22:41 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-03 08:22:41 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-03 08:22:45 [32minfo[39m: DB conectada
+2025-11-03 08:22:45 [32minfo[39m: DB lista y sincronizada
+2025-11-03 08:22:45 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-03 08:22:45 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-03 08:24:54 [32minfo[39m: 2025-11-03T14:24:54.132Z GET /api/rates/rank?team=France 200 8.074 ms rid=f7913ebf-0a06-4b98-abc6-1d5edca1923e
+2025-11-03 08:25:13 [32minfo[39m: 2025-11-03T14:25:13.153Z GET /api/rates/convert?amount=150&from=MXN&to=ARS&isMatchDay=true&rank=France&promoCode=GOAL10 200 105.831 ms rid=662c475e-ef82-4e03-ba31-61ce22740444
+2025-11-03 08:26:01 [32minfo[39m: DB conectada
+2025-11-03 08:26:01 [32minfo[39m: DB lista y sincronizada
+2025-11-03 08:26:01 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-03 08:26:01 [32minfo[39m: 📘 Swagger en http://localhost:3000/api-docs
+2025-11-03 08:31:46 [32minfo[39m: DB conectada
+2025-11-03 08:31:46 [32minfo[39m: DB lista y sincronizada
+2025-11-03 08:31:46 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-03 08:31:46 [32minfo[39m: Swagger en http://localhost:3000/api-docs
+2025-11-03 08:33:22 [32minfo[39m: DB conectada
+2025-11-03 08:33:22 [32minfo[39m: DB lista y sincronizada
+2025-11-03 08:33:22 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-03 08:33:22 [32minfo[39m: Sw7agger en http://localhost:3000/api-docs
+2025-11-03 08:33:26 [32minfo[39m: DB conectada
+2025-11-03 08:33:26 [32minfo[39m: DB lista y sincronizada
+2025-11-03 08:33:26 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-03 08:33:26 [32minfo[39m: Swagger en http://localhost:3000/api-docs

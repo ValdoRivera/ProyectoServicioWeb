@@ -1,6 +1,7 @@
 // src/routes/api/rates.js
 const { Router } = require("express");
 const ctrl = require("../../controllers/ratesController");
+const { getTeamRank } = require("../../services/rankService");
 const router = Router();
 
 /**
@@ -50,7 +51,11 @@ router.get("/", ctrl.getRates);
  *       - name: rank
  *         in: query
  *         schema: { type: integer, example: 4 }
- *         description: Ranking FIFA del equipo (Top5=-5%, Top10=-3%)
+ *         description: Ranking FIFA (Top5=-5%, Top10=-3%). Si no se envía, se puede usar teamName.
+ *       - name: teamName
+ *         in: query
+ *         schema: { type: string, example: "Argentina" }
+ *         description: Nombre de la selección para obtener el ranking automáticamente.
  *     responses:
  *       200:
  *         description: Conversión con detalle (comisión, neto, efectivo)
@@ -69,5 +74,30 @@ router.get("/convert", ctrl.convert);
  */
 router.get("/symbols", ctrl.symbols);
 
-module.exports = router;
+/**
+ * @swagger
+ * /rates/rank:
+ *   get:
+ *     tags: [Rates]
+ *     summary: Obtiene el ranking FIFA actual de una selección por nombre
+ *     parameters:
+ *       - name: team
+ *         in: query
+ *         required: true
+ *         schema: { type: string, example: "Spain" }
+ *     responses:
+ *       200:
+ *         description: Ranking encontrado (o null si no se encuentra)
+ */
+router.get("/rank", async (req, res) => {
+  const team = req.query.team;
+  if (!team) return res.status(400).json({ message: "Parámetro requerido: team" });
+  try {
+    const rank = await getTeamRank(team);
+    res.json({ team, rank, source: process.env.RANK_USE_MOCK === "true" ? "mock" : "api/maybe-mock" });
+  } catch (err) {
+    res.json({ team, rank: null, error: err?.message || "rank unavailable" });
+  }
+});
 
+module.exports = router;

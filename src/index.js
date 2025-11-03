@@ -89,17 +89,17 @@ app.use((err, req, res, _next) => {
 (async () => {
   try {
     await sequelize.authenticate();
-    logger.info("✅ DB conectada");
+    logger.info("DB conectada");
 
     await sequelize.sync();
-    logger.info("✅ DB lista y sincronizada");
+    logger.info("DB lista y sincronizada");
 
     app.listen(PORT, () => {
-      logger.info(`🚀 Servidor corriendo en http://localhost:${PORT}`);
-      logger.info(`📘 Swagger en http://localhost:${PORT}/api-docs`);
+      logger.info(`Servidor corriendo en http://localhost:${PORT}`);
+      logger.info(`Swagger en http://localhost:${PORT}/api-docs`);
     });
   } catch (err) {
-    logger.error(`❌ Error al iniciar: ${err.message}`);
+    logger.error(`Error al iniciar: ${err.message}`);
     process.exit(1);
   }
 })();

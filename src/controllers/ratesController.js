@@ -1,43 +1,31 @@
 // src/controllers/ratesController.js
-const {
-  getRates,
-  convertAndRecord,
-  getWorldCupSymbols,
-  convertWithBonuses,
-} = require("../services/ratesService");
+const { getRates, convert } = require("../services/ratesService");
+const Conversion = require("../models/Conversion");
 
-exports.getRates = async (req, res) => {
-  const base = (req.query.base || "").toUpperCase();
-  const rates = await getRates(base || undefined);
-  res.json({
-    base: base || process.env.FIAT_DEFAULT_BASE || "USD",
-    rates,
-  });
+exports.getRates = async (req, res, next) => {
+  try {
+    const base = (req.query.base || "").toUpperCase();
+    const rates = await getRates(base || undefined);
+    res.json({ base: base || process.env.FIAT_DEFAULT_BASE || "USD", rates });
+  } catch (err) { next(err); }
 };
 
-exports.convert = async (req, res) => {
-  const { amount, from, to, isMatchDay, promoCode, rank } = req.query;
-
-  if (!from || !to || !amount || isNaN(amount)) {
-    return res.status(400).json({
-      message: "Parámetros requeridos: amount, from, to",
+exports.convert = async (req, res, next) => {
+  try {
+    const { amount, from, to } = req.query;
+    const amt = Number(amount);
+    if (!from || !to || !amount || isNaN(amt)) {
+      return res.status(400).json({ message: "Parámetros requeridos: amount, from, to" });
+    }
+    const data = await convert(amt, from, to);
+    await Conversion.create({
+      fromSymbol: data.from,
+      toSymbol: data.to,
+      amount: data.amount,
+      result: data.result,
+      base: data.base,
+      meta: data.usedRates,
     });
-  }
-
-  const data = await convertWithBonuses({
-    amount: Number(amount),
-    from,
-    to,
-    isMatchDay: String(isMatchDay || "").toLowerCase() === "true",
-    promoCode,
-    rank: rank != null ? Number(rank) : undefined,
-  });
-
-  await convertAndRecord(amount, from, to);
-  res.json(data);
-};
-
-exports.symbols = async (_req, res) => {
-  const data = getWorldCupSymbols();
-  res.json({ count: data.length, data });
+    res.json(data);
+  } catch (err) { next(err); }
 };

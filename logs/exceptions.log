@@ -1,0 +1,196 @@
+2025-10-15 15:24:49 [31merror[39m: uncaughtException: argument handler must be a function
+TypeError: argument handler must be a function
+    at Route.<computed> [as post] (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\route.js:228:15)
+    at Router.<computed> [as post] (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\index.js:448:19)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\auth.route.js:42:8)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+    at Object..js (node:internal/modules/cjs/loader:1820:10)
+    at Module.load (node:internal/modules/cjs/loader:1423:32)
+    at Function._load (node:internal/modules/cjs/loader:1246:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+2025-10-26 19:34:56 [31merror[39m: uncaughtException: argument handler must be a function
+TypeError: argument handler must be a function
+    at Route.<computed> [as get] (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\lib\route.js:228:15)
+    at Router.<computed> [as get] (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\index.js:448:19)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\users.js:10:8)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+    at Object..js (node:internal/modules/cjs/loader:1820:10)
+    at Module.load (node:internal/modules/cjs/loader:1423:32)
+    at Function._load (node:internal/modules/cjs/loader:1246:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+2025-10-26 19:53:25 [31merror[39m: uncaughtException: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+Error: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js:20:20)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-26 19:54:43 [31merror[39m: uncaughtException: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+Error: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js:17:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-26 19:55:00 [31merror[39m: uncaughtException: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+Error: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js:17:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-26 20:01:18 [31merror[39m: uncaughtException: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+Error: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js:17:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-26 20:06:42 [31merror[39m: uncaughtException: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+Error: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js:17:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-26 20:06:59 [31merror[39m: uncaughtException: argument handler must be a function
+TypeError: argument handler must be a function
+    at Function.use (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\node_modules\router\index.js:392:13)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js:6:8)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+    at Object..js (node:internal/modules/cjs/loader:1820:10)
+    at Module.load (node:internal/modules/cjs/loader:1423:32)
+    at Function._load (node:internal/modules/cjs/loader:1246:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+2025-10-26 20:07:03 [31merror[39m: uncaughtException: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+Error: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js:17:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-26 20:08:59 [31merror[39m: uncaughtException: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+Error: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js:17:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)
+2025-10-26 20:11:01 [31merror[39m: uncaughtException: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+Error: Cannot find module './user'
+Require stack:
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\index.js
+- C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\index.js
+    at Function._resolveFilename (node:internal/modules/cjs/loader:1365:15)
+    at defaultResolveImpl (node:internal/modules/cjs/loader:1021:19)
+    at resolveForCJSWithHooks (node:internal/modules/cjs/loader:1026:22)
+    at Function._load (node:internal/modules/cjs/loader:1175:37)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Module.require (node:internal/modules/cjs/loader:1445:12)
+    at require (node:internal/modules/helpers:135:16)
+    at Object.<anonymous> (C:\Users\grefe\OneDrive\Documentos\Servicios Web\primer-servicio\src\routes\api\index.js:17:21)
+    at Module._compile (node:internal/modules/cjs/loader:1688:14)

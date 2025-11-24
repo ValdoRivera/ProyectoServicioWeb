@@ -1,47 +1,38 @@
+// src/controllers/authController.js
+const { StatusCodes } = require("http-status-codes");
 const authService = require("../services/authService");
-const jwt = require("jsonwebtoken");
 
-exports.registrar = async (req, res, next) => {
-  try {
-    const { nombre, email, password } = req.body;
-    const user = await authService.registrarUsuario({ nombre, email, password });
+// Registro
+exports.registrar = (req, res, next) => {
+  const { nombre, email, password } = req.body;
 
-    // No regresamos password nunca
-    res.status(201).json({
-      id: user.id,
-      nombre: user.nombre,
-      email: user.email
-    });
-  } catch (err) {
-    if (err.message === "Email ya registrado") {
-      return res.status(409).json({ message: err.message });
-    }
-    next(err);
-  }
+  authService
+    .registerUser({ nombre, email, password })
+    .then(({ user, token }) => {
+      // No regresamos el password nunca
+      return res.status(StatusCodes.CREATED).json({
+        id: user.id,
+        nombre: user.nombre,
+        email: user.email,
+        token,
+      });
+    })
+    .catch(next); // pasa cualquier error al middleware global
 };
 
-exports.login = async (req, res, next) => {
-  try {
-    const { email, password } = req.body;
-    const user = await authService.loginUsuario({ email, password });
+// Login
+exports.login = (req, res, next) => {
+  const { email, password } = req.body;
 
-    // Generar token JWT con id y email
-    const token = jwt.sign(
-      { id: user.id, email: user.email },
-      process.env.JWT_SECRET,
-      { expiresIn: "1h" }
-    );
-
-    res.json({
-      id: user.id,
-      nombre: user.nombre,
-      email: user.email,
-      token
-    });
-  } catch (err) {
-    if (err.message === "Credenciales inválidas") {
-      return res.status(401).json({ message: err.message });
-    }
-    next(err);
-  }
+  authService
+    .loginUser({ email, password })
+    .then(({ user, token }) => {
+      return res.status(StatusCodes.OK).json({
+        id: user.id,
+        nombre: user.nombre,
+        email: user.email,
+        token,
+      });
+    })
+    .catch(next);
 };

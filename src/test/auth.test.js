@@ -1,41 +1,54 @@
-// tests/auth.test.js
-import { describe, expect, beforeAll } from '@jest/globals';
-import { faker } from '@faker-js/faker';
-import status from 'http-status';
-import request from 'supertest';
-import server from '../src/server.js'; // ajusta la ruta a tu archivo real
-import 'dotenv/config';
+// src/test/auth.test.js
+const request = require("supertest");
+const app = require("../app");
 
-describe('POST - register a new user', () => {
-  const basePath = '/api/v1/register';
-  const fixedUser = {
-    name: 'Nathaly',
-    email: 'nathaly.cedeno@cutonalapan.ug.mx', // mismo del ejemplo
-    password: '123456',
-  };
+// Mockea el servicio real con el mock de tests
+jest.mock("../services/authService", () =>
+  require("./_mocks_/services/authService")
+);
 
-  // Creamos/aseguramos el usuario base para que la prueba de "duplicado" tenga sentido
-  beforeAll(async () => {
-    await request(server).post(basePath).send(fixedUser);
+// SECRET para firmar tokens en tests (si no viene por env)
+process.env.JWT_SECRET = process.env.JWT_SECRET || "testsecret";
+
+describe("Auth routes", () => {
+  test("POST /api/auth/register -> 201", async () => {
+    const res = await request(app)
+      .post("/api/auth/register")
+      .send({
+        nombre: "Inge",
+        email: "inges16@example.com",
+        password: "123456",
+      })
+      .expect(201);
+
+    expect(res.body).toMatchObject({
+      id: expect.any(Number),
+      nombre: "Inge",
+      email: "inges16@example.com",
+    });
+    expect(res.body.password).toBeUndefined();
   });
 
-  it("Should return status 400 if the registered user is duplicated", async () => {
-    const response = await request(server).post(basePath).send(fixedUser);
+  test("POST /api/auth/login -> 200 y token", async () => {
+    const res = await request(app)
+      .post("/api/auth/login")
+      .send({ email: "inges16@example.com", password: "123456" })
+      .expect(200);
 
-    expect(response.body?.status).toBe(false);
-    expect(response.status).toBe(status.BAD_REQUEST);
+    expect(res.body).toHaveProperty("token");
+    expect(res.body).toMatchObject({
+      id: 4,
+      nombre: "Inge",
+      email: "inges16@example.com",
+    });
   });
 
-  it('Should return status 201 if register user is successful', async () => {
-    const uniqueUser = {
-      name: 'Nathaly',
-      email: faker.internet.email({ firstName: 'nathaly' }),
-      password: '123456',
-    };
+  test("POST /api/auth/login credenciales malas -> 401", async () => {
+    const res = await request(app)
+      .post("/api/auth/login")
+      .send({ email: "bad@example.com", password: "wrong" })
+      .expect(401);
 
-    const response = await request(server).post(basePath).send(uniqueUser);
-
-    expect(response.body?.status).toBe(true);
-    expect(response.status).toBe(status.CREATED);
+    expect(res.body).toEqual({ message: "Credenciales inválidas" });
   });
 });

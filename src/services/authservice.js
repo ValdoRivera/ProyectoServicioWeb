@@ -1,7 +1,12 @@
-// services/authservices.js
+// src/services/authService.js
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const Usuario = require("../models/Usuario");
+const {
+  BadRequestError,
+  ConflictError,
+  UnauthorizedError,
+} = require("../utils/errors");
 
 const JWT_SECRET = process.env.JWT_SECRET || "cambia-esto";
 const JWT_EXPIRES = process.env.JWT_EXPIRES || "1d";
@@ -49,17 +54,17 @@ function verifyToken(token) {
  */
 async function registerUser({ nombre, email, password }) {
   if (!nombre || !email || !password) {
-    const err = new Error("nombre, email y password son requeridos");
-    err.status = 400;
-    throw err;
+    throw new BadRequestError("nombre, email y password son requeridos", {
+      code: "AUTH_MISSING_FIELDS",
+    });
   }
 
   // ¿Ya existe?
   const existing = await Usuario.findOne({ where: { email } });
   if (existing) {
-    const err = new Error("El email ya está registrado");
-    err.status = 409;
-    throw err;
+    throw new ConflictError("El email ya está registrado", {
+      code: "AUTH_EMAIL_EXISTS",
+    });
   }
 
   const passwordHash = await hashPassword(password);
@@ -80,23 +85,23 @@ async function registerUser({ nombre, email, password }) {
  */
 async function loginUser({ email, password }) {
   if (!email || !password) {
-    const err = new Error("email y password son requeridos");
-    err.status = 400;
-    throw err;
+    throw new BadRequestError("email y password son requeridos", {
+      code: "AUTH_MISSING_FIELDS",
+    });
   }
 
   const user = await Usuario.findOne({ where: { email } });
   if (!user) {
-    const err = new Error("Credenciales inválidas");
-    err.status = 401;
-    throw err;
+    throw new UnauthorizedError("Credenciales inválidas", {
+      code: "AUTH_INVALID_CREDENTIALS",
+    });
   }
 
   const ok = await comparePassword(password, user.password);
   if (!ok) {
-    const err = new Error("Credenciales inválidas");
-    err.status = 401;
-    throw err;
+    throw new UnauthorizedError("Credenciales inválidas", {
+      code: "AUTH_INVALID_CREDENTIALS",
+    });
   }
 
   const token = generateToken(user);
@@ -109,22 +114,34 @@ async function loginUser({ email, password }) {
  * Middleware de autenticación para Express:
  * - Lee token de Authorization: Bearer <token>
  * - Verifica y adjunta req.user
+ * - Usa callback de jwt.verify 
  */
-function authenticateJWT(req, res, next) {
-  try {
-    const auth = req.headers.authorization || "";
-    const parts = auth.split(" ");
+function authenticateJWT(req, _res, next) {
+  const auth = req.headers.authorization || "";
+  const parts = auth.split(" ");
 
-    if (parts.length !== 2 || parts[0] !== "Bearer") {
-      return res.status(401).json({ message: "Token no provisto" });
+  if (parts.length !== 2 || parts[0] !== "Bearer") {
+    return next(
+      new UnauthorizedError("Token no provisto", {
+        code: "AUTH_TOKEN_MISSING",
+      })
+    );
+  }
+
+  const token = parts[1];
+
+  jwt.verify(token, JWT_SECRET, (err, decoded) => {
+    if (err) {
+      return next(
+        new UnauthorizedError("Token inválido o expirado", {
+          code: "AUTH_TOKEN_INVALID",
+        })
+      );
     }
 
-    const decoded = verifyToken(parts[1]);
     req.user = decoded; // { sub, email, nombre, iat, exp }
-    next();
-  } catch (err) {
-    return res.status(401).json({ message: "Token inválido o expirado" });
-  }
+    return next();
+  });
 }
 
 /**
@@ -155,7 +172,4 @@ module.exports = {
   // helper
   getCurrentUser,
 };
-const logger = require('../config/logger');
-async function algo() {
-  logger.info('Haciendo algo en el service');
-}
+

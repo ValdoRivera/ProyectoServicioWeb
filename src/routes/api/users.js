@@ -1,35 +1,44 @@
-// src/routes/api/users.js
 const { Router } = require("express");
 const userController = require("../../controllers/userController");
+// Usa el nombre correcto del archivo:
 const authMiddleware = require("../../middlewares/authMiddleware");
+// Si tu archivo se llama authMiddleware.js (sin W mayúscula), usa en cambio:
+// const authMiddleware = require("../../middlewares/authMiddleware");
 
 const router = Router();
 
-// Protegidas con JWT
-// GET /api/users -> ahora regresa el usuario del token
-router.get("/", authMiddleware, userController.listar);
-
-// (Opcional) GET /api/users/me -> alternativa explícita
-router.get("/me", authMiddleware, userController.getMe);
-
-module.exports = router;
+/**
+ * @swagger
+ * /api/users:
+ *   get:
+ *     summary: Lista todos los usuarios
+ *     description: Por defecto devuelve solo id y nombre. Usa ?full=true para incluir email y createdAt.
+ *     tags: [Users]
+ *     parameters:
+ *       - in: query
+ *         name: full
+ *         schema: { type: boolean }
+ *         description: Si es true devuelve campos completos
+ *     responses:
+ *       200: { description: Lista de usuarios }
+ */
+router.get("/", authMiddleware, userController.listAll);
 
 /**
- * @openapi
- * /users:
+ * @swagger
+ * /api/users/{id}:
  *   get:
+ *     summary: Obtiene datos públicos (mínimos) de un usuario por ID
  *     tags: [Users]
- *     summary: Listar usuarios (requiere JWT)
- *     security:
- *       - bearerAuth: []
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema: { type: integer }
  *     responses:
- *       200:
- *         description: Lista de usuarios
- *         content:
- *           application/json:
- *             schema:
- *               type: array
- *               items: { $ref: '#/components/schemas/Usuario' }
- *       401:
- *         description: No autorizado
+ *       200: { description: Datos mínimos del usuario }
+ *       404: { description: Usuario no encontrado }
  */
+router.get("/:id", authMiddleware, userController.getPublicById);
+
+module.exports = router;

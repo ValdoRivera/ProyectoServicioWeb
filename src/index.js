@@ -1,66 +1,111 @@
-require("dotenv").config();
-const swaggerUi = require("swagger-ui-express");
-const swaggerSpec = require("./config/swagger");
+// index.js
+process.on("uncaughtException", (err) => {
+  console.error("UNCAUGHT EXCEPTION ➜", err.stack || err);
+  process.exit(1);
+});
 
 process.on("unhandledRejection", (err) => {
-  console.error("UNHANDLED REJECTION:", err);
-  process.exit(1);
-});
-process.on("uncaughtException", (err) => {
-  console.error("UNCAUGHT EXCEPTION:", err);
+  console.error("UNHANDLED REJECTION ➜", err?.stack || err);
   process.exit(1);
 });
 
-console.log("BOOT 1: dotenv loaded");
-
+require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
+const helmet = require("helmet");
+const morgan = require("morgan");
+const { randomUUID } = require("crypto");
+const swaggerJSDoc = require("swagger-jsdoc");
+const swaggerUi = require("swagger-ui-express");
+
+const logger = require("./config/logger");
+const sequelize = require("./config/db");
+require("./models/Conversion");
+require("./models/Usuario");
+
+const responseTime = require("./middlewares/responseTime");
+const errorHandler = require("./middlewares/errorHandler"); // middleware global de errores
+
+const routes = require("./routes");
+
 const app = express();
+const PORT = process.env.PORT || 3000;
 
+/* ----------------- Middlewares base ----------------- */
+app.use(cors());
+app.use(helmet({ contentSecurityPolicy: false }));
 app.use(express.json());
-console.log("BOOT 2: express.json mounted");
 
-// ⚠️ Si tu logger o httpLogger puede fallar, comenta temporalmente para probar
-// const logger = require("./config/logger");
-// const httpLogger = require("./middleware/httpLogger");
-// app.use(httpLogger);
+/* --------- Request-ID para trazabilidad --------- */
+app.use((req, res, next) => {
+  req.id = req.headers["x-request-id"] || randomUUID();
+  res.setHeader("x-request-id", req.id);
+  req.log = logger.child({ rid: req.id });
+  next();
+});
 
-let routes;
-try {
-  routes = require("./routes");   // <- si falla aquí, lo sabremos
-  console.log("BOOT 3: routes module required OK");
-} catch (e) {
-  console.error("ERROR requiring ./routes:", e);
-  process.exit(1);
-}
+/* ------------------- Tiempo de respuesta propio ---------------------- */
+app.use(responseTime);
 
+/* ------------------- Morgan + Winston ---------------------- */
+morgan.token("rid", (req) => req.id);
+app.use(
+  morgan(':date[iso] :method :url :status :response-time ms rid=:rid', {
+    stream: {
+      write: (message) => logger.info(message.trim()),
+    },
+  })
+);
+
+/* --------------------- Swagger -------------------------- */
+const swaggerOptions = {
+  definition: {
+    openapi: "3.0.3",
+    info: {
+      title: "Casa de Cambio Mundial API",
+      version: "1.0.0",
+      description:
+        "API de tipos de cambio con temática del mundial. Incluye conversión con promos, bono por ranking y símbolos clasificados 2026.",
+    },
+    servers: [
+      { url: "/api", description: "Ruta base (montado en /api)" },
+      { url: `http://localhost:${PORT}/api`, description: "Local Dev" },
+    ],
+  },
+  apis: ["./src/routes/api/*.js"],
+};
+
+const swaggerSpecs = swaggerJSDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
+
+/* --------------------- Rutas -------------------------- */
 app.use("/api", routes);
-console.log("BOOT 4: /api mounted");
 
-// 404
+/* ------------------ 404 Not Found --------------------- */
 app.use((req, res) => {
+  (req.log || logger).warn(`404 ${req.method} ${req.originalUrl}`);
   res.status(404).json({ message: "Ruta no encontrada" });
 });
 
-try {
-  const PORT = process.env.PORT || 3000;
+/* ----------------- Manejo de errores (global) ------------------ */
+// ⚠️ Tiene que ir al final de TODO (después de rutas y 404)
+app.use(errorHandler);
 
-  // Opcional: lista las rutas reales registradas
+/* -------------------- Arranque ------------------------ */
+(async () => {
   try {
-    const listEndpoints = require("express-list-endpoints");
-    console.log("ROUTES:", listEndpoints(app));
-  } catch(_) {}
+    await sequelize.authenticate();
+    logger.info("DB conectada");
 
-  const swaggerUi = require("swagger-ui-express");
-const swaggerSpec = require("./config/swagger");
+    await sequelize.sync();
+    logger.info("DB lista y sincronizada");
 
-app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
-app.get("/docs.json", (_req, res) => res.json(swaggerSpec));
-
-
-  app.listen(PORT, () => {
-    console.log(`BOOT 5: listening on http://localhost:${PORT}`);
-  });
-} catch (e) {
-  console.error("ERROR in app.listen:", e);
-  process.exit(1);
-}
+    app.listen(PORT, () => {
+      logger.info(`Servidor corriendo en http://localhost:${PORT}`);
+      logger.info(`Swagger en http://localhost:${PORT}/api-docs`);
+    });
+  } catch (err) {
+    logger.error(`Error al iniciar: ${err.message}`);
+    process.exit(1);
+  }
+})();

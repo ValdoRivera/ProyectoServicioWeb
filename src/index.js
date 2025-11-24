@@ -21,6 +21,8 @@ const sequelize = require("./config/db");
 require("./models/Conversion");
 require("./models/Usuario");
 
+const responseTime = require("./middlewares/responseTime");
+
 const routes = require("./routes");
 
 const app = express();
@@ -38,6 +40,9 @@ app.use((req, res, next) => {
   req.log = logger.child({ rid: req.id });
   next();
 });
+
+/* ------------------- Tiempo de respuesta propio ---------------------- */
+app.use(responseTime);
 
 /* ------------------- Morgan + Winston ---------------------- */
 morgan.token("rid", (req) => req.id);

@@ -669,3 +669,39 @@ AxiosError: Request failed with status code 404
 2025-11-03 08:33:26 [32minfo[39m: DB lista y sincronizada
 2025-11-03 08:33:26 [32minfo[39m: Servidor corriendo en http://localhost:3000
 2025-11-03 08:33:26 [32minfo[39m: Swagger en http://localhost:3000/api-docs
+2025-11-03 09:09:12 [32minfo[39m: DB conectada
+2025-11-03 09:09:12 [32minfo[39m: DB lista y sincronizada
+2025-11-03 09:09:12 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-03 09:09:12 [32minfo[39m: Swagger en http://localhost:3000/api-docs
+2025-11-03 09:23:50 [32minfo[39m: DB conectada
+2025-11-03 09:23:50 [32minfo[39m: DB lista y sincronizada
+2025-11-03 09:23:50 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-03 09:23:50 [32minfo[39m: Swagger en http://localhost:3000/api-docs
+2025-11-04 15:10:26 [33mwarn[39m: 404 GET / rid=f6067ed8-425a-48ab-8898-0c7a2620837c
+2025-11-04 15:10:26 [32minfo[39m: 2025-11-04T21:10:26.627Z GET / 404 58.803 ms rid=f6067ed8-425a-48ab-8898-0c7a2620837c
+2025-11-04 15:10:43 [33mwarn[39m: 404 GET /nmaplowercheck1762290643 rid=835160f2-9c7d-47cf-a07d-f052c6eba10c
+2025-11-04 15:10:43 [32minfo[39m: 2025-11-04T21:10:43.326Z GET /nmaplowercheck1762290643 404 1.406 ms rid=835160f2-9c7d-47cf-a07d-f052c6eba10c
+2025-11-04 15:10:43 [33mwarn[39m: 404 POST /sdk rid=0531c1ec-803e-493c-9f33-321a62884986
+2025-11-04 15:10:43 [32minfo[39m: 2025-11-04T21:10:43.331Z POST /sdk 404 2.055 ms rid=0531c1ec-803e-493c-9f33-321a62884986
+2025-11-04 15:10:43 [33mwarn[39m: 404 GET / rid=020f74b4-0fa7-4748-9b0c-14e4d4638ee2
+2025-11-04 15:10:43 [32minfo[39m: 2025-11-04T21:10:43.339Z GET / 404 1.201 ms rid=020f74b4-0fa7-4748-9b0c-14e4d4638ee2
+2025-11-04 15:10:43 [33mwarn[39m: 404 GET /HNAP1 rid=9a0549ff-058c-4198-a3ad-2fa3d27e9bf4
+2025-11-04 15:10:43 [32minfo[39m: 2025-11-04T21:10:43.546Z GET /HNAP1 404 1.751 ms rid=9a0549ff-058c-4198-a3ad-2fa3d27e9bf4
+2025-11-04 15:10:43 [33mwarn[39m: 404 GET /evox/about rid=379b5b2e-3a0b-4561-9338-0ca1d4db8f9e
+2025-11-04 15:10:43 [32minfo[39m: 2025-11-04T21:10:43.592Z GET /evox/about 404 1.762 ms rid=379b5b2e-3a0b-4561-9338-0ca1d4db8f9e
+2025-11-04 15:10:44 [33mwarn[39m: 404 GET / rid=ca72fbc2-a000-40b5-8d2f-fe3a46608333
+2025-11-04 15:10:44 [32minfo[39m: 2025-11-04T21:10:44.718Z GET / 404 3.136 ms rid=ca72fbc2-a000-40b5-8d2f-fe3a46608333
+2025-11-04 15:10:44 [33mwarn[39m: 404 GET / rid=e7495499-841b-4c79-8c1d-420aa7aa1bf3
+2025-11-04 15:10:44 [32minfo[39m: 2025-11-04T21:10:44.869Z GET / 404 1.102 ms rid=e7495499-841b-4c79-8c1d-420aa7aa1bf3
+2025-11-04 16:10:10 [32minfo[39m: DB conectada
+2025-11-04 16:10:10 [32minfo[39m: DB lista y sincronizada
+2025-11-04 16:10:10 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-04 16:10:10 [32minfo[39m: Swagger en http://localhost:3000/api-docs
+2025-11-23 19:09:10 [32minfo[39m: DB conectada
+2025-11-23 19:09:11 [32minfo[39m: DB lista y sincronizada
+2025-11-23 19:09:11 [32minfo[39m: Servidor corriendo en http://localhost:3000
+2025-11-23 19:09:11 [32minfo[39m: Swagger en http://localhost:3000/api-docs
+2025-11-23 19:09:51 [32minfo[39m: Response time ➜ 22ms | GET /api/users/3 rid=1af885df-5cb5-4dfd-8f95-7ec1365620f2
+2025-11-23 19:09:51 [32minfo[39m: 2025-11-24T01:09:51.200Z GET /api/users/3 401 16.399 ms rid=1af885df-5cb5-4dfd-8f95-7ec1365620f2
+2025-11-23 19:10:00 [32minfo[39m: Response time ➜ 2ms | GET /api/rates rid=d55b0359-aad9-4853-af6a-62bc07426816
+2025-11-23 19:10:00 [32minfo[39m: 2025-11-24T01:10:00.178Z GET /api/rates 200 1.693 ms rid=d55b0359-aad9-4853-af6a-62bc07426816
